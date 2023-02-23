@@ -14,11 +14,24 @@ def properCaps(input):
     str - proper capitalized string
     '''
     return
+def format_sentence(sentence):
+    
+    sentence = sentence.lower()
+    
+    sentence = sentence.capitalize()
+    
+    if sentence[-1] not in ['.', '!', '?']:
+        # If not, add a period at the end
+        sentence += '.'
+    return sentence
 
+sentence = "this Is a sample Sentence that Needs formatting"
+formatted_sentence = format_sentence(sentence)
+print(formatted_sentence)
 
 if __name__ == "__main__":
     sentence = "Carry On My Wayward Son!"
-    assert properCaps(sentence) == "Carry on my wayward son!"
+    assert format_sentence(sentence) == "Carry on my wayward son!"
 
     sentence = "I'm JuSt A LiTtle Black RainCLOUD!"
-    assert properCaps(sentence) == "I'm just a little black raincloud!"
+    assert format_sentence(sentence) == "I'm just a little black raincloud!"

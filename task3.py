@@ -20,12 +20,34 @@ def split(input):
 
     return
 
+def split(s):
+    length = len(s)
+    half_length = length // 2
+    if s[half_length] != " ":
+        # Find the last space before the middle point
+        i = s.rfind(" ", 0, half_length)
+        if i == -1:
+            i = half_length
+            s1 = s[:i]
+        else:
+            s1 = s[:i]
+        s2 = s[i+1:]
+    else:
+        s1 = s[:half_length]
+        s2 = s[half_length+1:]
+    return s1 + "\n" + s2
+
+s = "There is a big balloon in the blue sky"
+y=split(s)
+print(y)
+
+
 if __name__ == "__main__":
     sentence = "There is a big balloon in the blue sky"
-    assert split(sentence) == "There is a big ball-\noon in the blue sky"
+    assert split(s) == "There is a big ball-\noon in the blue sky"
 
     sentence = "I am a fat cat"
-    assert split(sentence) == "I am a \nfat cat"
+    assert split(s) == "I am a \nfat cat"
 
     sentence = "I was a fat cat"
-    assert split(sentence) == "I was a\n fat cat"
+    assert split(s) == "I was a\n fat cat"

@@ -15,12 +15,17 @@ def replaceDog(input):
     return
     str - the modified string
     '''
-    modifiedString = input
+
+    modifiedString = input.replace("dog", "kitty")
 
     return modifiedString
+x = 'my dog has fleas'
+y=replaceDog(x)
+print(y)
 
 
 if __name__ == "__main__":
+
     '''
     assertion tests are basically a statement claiming truth
     if the statement is true, the program continues normally
