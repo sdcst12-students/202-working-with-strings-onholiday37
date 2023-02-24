@@ -36,12 +36,13 @@ def split(s):
         s1 = s[:half_length]
         s2 = s[half_length+1:]
     return s1 + "\n" + s2
+s=input("input your sentence:")
 
-s = "There is a big balloon in the blue sky"
 y=split(s)
 print(y)
 
 
+"""
 if __name__ == "__main__":
     sentence = "There is a big balloon in the blue sky"
     assert split(s) == "There is a big ball-\noon in the blue sky"
@@ -51,3 +52,4 @@ if __name__ == "__main__":
 
     sentence = "I was a fat cat"
     assert split(s) == "I was a\n fat cat"
+    """
